@@ -16,7 +16,6 @@ terraform-alicloud-vpc
     ```
     module "vpc" {
         source                  = "hanyouqing/vpc/alicloud"
-
         vpc_name                = var.vpc_name
         vpc_description         = var.vpc_description
         vpc_cidr_block          = lookup(var.cidr_blocks, var.region_abbr)
@@ -26,7 +25,6 @@ terraform-alicloud-vpc
         vpc_sg_policy_ssh       = var.vpc_sg_policy_ssh
         vpc_sg_policy_http      = var.vpc_sg_policy_http
         vpc_sg_policy_https     = var.vpc_sg_policy_https
-
         tags = var.tags
     }
     ```
@@ -84,7 +82,7 @@ terraform-alicloud-vpc
     region_abbr  = "bj"
 
     tags = {
-        environment = "testing"     # develop|testing|staging|production
+        environment = "testing"                 # develop|testing|staging|production
         department  = "infrastructure"
         createby    = "ihanyouqing@gmail.com"
         project     = "icmdb"
@@ -98,7 +96,7 @@ terraform-alicloud-vpc
     vpc_description         = "icmdb"
     vpc_availability_zone   = "cn-beijing-e"
     vpc_inner_access_policy = "Drop"            # Accept|Drop, allow from all in the same security group
-    vpc_whitelist_ips       = "106.38.171.130"
+    vpc_whitelist_ips       = "106.38.171.130"  # ipaddress where you login from
     vpc_sg_policy_ssh       = "accept"          # accept|drop
     vpc_sg_policy_http      = "accept"
     vpc_sg_policy_https     = "drop"
