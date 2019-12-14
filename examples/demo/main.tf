@@ -10,20 +10,13 @@
 # }
 terraform {
     required_version = ">= 0.12.18"
-    backend "oss" {
-        bucket  = "terraform-alicloud-infra"
-        prefix  = "cn-beijing/testing/icmdb"  # region/environment/project, region=workspace
-        key     = "terraform.tfstate"
-        region  = "cn-beijing"
-        # tablestore_endpoint = "https://terraform-remote.${var.region}.ots.aliyuncs.com"
-        # tablestore_table    = "statelock"
-    }
 }
 provider "alicloud" {
     version = ">= 1.64"
 }
-module "terraform-alicloud-vpc" {
-    source                  = "../../../terraform-alicloud-vpc"
+module "vpc" {
+    # source                  = "hanyouqing/vpc/alicloud"
+    source                  = "../../../vpc"
     vpc_name                = var.vpc_name
     vpc_description         = var.vpc_description
     vpc_cidr_block          = lookup(var.cidr_blocks, var.region_abbr)

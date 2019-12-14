@@ -1,10 +1,15 @@
 output "motd" {
-    value = "${module.terraform-alicloud-vpc.motd}"
+    value   = module.vpc.motd
 }
 output "vpc" {
-    value = {
-        "vpc_name": "${module.terraform-alicloud-vpc.name}",
-        "vpc_sg": "${module.terraform-alicloud-vpc.sg}",
-        "vpc_whitelist": "${module.terraform-alicloud-vpc.whitelist}",
-    }
+    value   = module.vpc.vpc
+}
+output "vswitch" {
+    value   = module.vpc.vswitch
+}
+output "sg" {
+    value   = module.vpc.sg
+}
+output "sg_rules" {
+    value   = module.vpc.sg_rules
 }
