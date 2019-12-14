@@ -12,7 +12,6 @@
 variable "region"       { default = "" }    # takes region id as workspace name
 variable "region_abbr"  { default = "" }    # see: https://github.com/hanyouqing/terraform-alicloud-infra/blob/master/variables.tf#L35
 
-
 variable "vpc_name"                 { default = "" }
 variable "vpc_description"          { default = "" }
 variable "vpc_cidr_block"           { default = "" } # 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
