@@ -4,7 +4,9 @@
 #   https://www.terraform.io/docs/providers/alicloud/r/security_group.html
 #   https://www.terraform.io/docs/providers/alicloud/r/security_group_rule.html
 #   
-
+provider "alicloud" {
+    version = ">= 1.64"
+}
 resource "alicloud_vpc" "infra" {
     name                = var.vpc_name
     description         = var.vpc_description

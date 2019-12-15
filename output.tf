@@ -43,40 +43,44 @@ output "sg" {
 }
 output "sg_rules" {
     description = "Rules of secure group."
-    value = {
-        "whitelist": {
+    value = [
+        {
+            "name": "whitelist",
             "id": alicloud_security_group_rule.whitelist.id,
             "type": alicloud_security_group_rule.whitelist.type,
             # "name": alicloud_security_group_rule.whitelist.name,
             "port_range": alicloud_security_group_rule.whitelist.port_range,
             "ip_protocol": alicloud_security_group_rule.whitelist.ip_protocol,
         },
-        "default": {
+        {
+            "name": "default",
             "id": alicloud_security_group_rule.default.id,
             "type": alicloud_security_group_rule.default.type,
             "port_range": alicloud_security_group_rule.default.port_range,
             "ip_protocol": alicloud_security_group_rule.default.ip_protocol,
         },
-        "ssh": {
+        {
+            "name": "ssh",
             "id": alicloud_security_group_rule.ssh.id,
             "type": alicloud_security_group_rule.ssh.type,
             "port_range": alicloud_security_group_rule.ssh.port_range,
             "ip_protocol": alicloud_security_group_rule.ssh.ip_protocol,
         },
-        "http": {
+        {
+            "name": "http",
             "id": alicloud_security_group_rule.http.id,
             "type": alicloud_security_group_rule.http.type,
             "port_range": alicloud_security_group_rule.http.port_range,
             "ip_protocol": alicloud_security_group_rule.http.ip_protocol,
         },
-        "https": {
+        {
+            "name": "https",
             "id": alicloud_security_group_rule.https.id,
             "type": alicloud_security_group_rule.https.type,
             "port_range": alicloud_security_group_rule.https.port_range,
             "ip_protocol": alicloud_security_group_rule.https.ip_protocol,
         },
-        "reference": "https://www.terraform.io/docs/providers/alicloud/r/security_group_rule.html",
-    }
+    ]
 }
 output "whitelist" {
     description = "The whitelist ips, should seprated by comma"
