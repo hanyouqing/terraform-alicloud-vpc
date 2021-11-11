@@ -6,6 +6,8 @@
 #   
 provider "alicloud" {
     version = ">= 1.64"
+    region  = var.region != "" ? var.region : null
+    profile = var.profile != "" ? var.profile : null
 }
 resource "alicloud_vpc" "infra" {
     name                = var.vpc_name

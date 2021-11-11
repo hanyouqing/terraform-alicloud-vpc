@@ -9,6 +9,7 @@
 #   -var / -var-file
 #
 
+variable "profile"      { default = "" }
 variable "region"       { default = "" }    # takes region id as workspace name
 variable "region_abbr"  { default = "" }    # see: https://github.com/hanyouqing/terraform-alicloud-infra/blob/master/variables.tf#L35
 
